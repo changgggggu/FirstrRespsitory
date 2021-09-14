@@ -3,11 +3,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:10090/eureka/
 server:
-  port: 10092
+  port: 8001
 spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: gues
   application:
     name: eurekaclient
