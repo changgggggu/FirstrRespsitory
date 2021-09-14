@@ -4,6 +4,23 @@ eureka:
       defaultZone: http://localhost:10090/eureka/
 server:
   port: 10092
+zipkin:
+  sender:
+    type: web
+  rabbitmq:
+    host: localhost
+    port: 15672
+    username: guest
+    listener: # 这里配置了重试策略
+      direct:
+        retry:
+          enabled: true
+      simple:
+        retry:
+          enabled: true
+  sleuth:
+    sampler:
+      percentage: 1.0
 spring:
   application:
     name: eurekaclient
